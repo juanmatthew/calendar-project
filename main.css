@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    /* border: 1px dotted red; */
 }
 
 body {
@@ -25,23 +26,43 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 25px 20px 10px;
+    padding: 25px 30px 10px;
 }
 
 header .current-date {
     font-size: 1.45rem;
-    font-weight: 500px;
+    font-weight: 500;
 }
 
+/* header .icons {
+    border: 1px dotted blue;
+    padding: 0 20px;
+} */
+
 header .icons span {
-    height: 38px;
-    width: 38px;
+    height: 28px;
+    width: 28px;
     margin: 0 1px;
+    padding: 3px;
     cursor: pointer;
     text-align: center;
     line-height: 38px;
     border-radius: 5px;
-    background: #ebc8eb;
+    background: #be585879;
+    /* border: 1px dotted yellow; */
+}
+
+header .icons span:hover{
+    background: #be5858;
+    transition: .5s;
+}
+
+header .icons span:last-child{
+    margin-right: -10px;
+}
+
+.calendar {
+    padding: 20px;
 }
 
 /*------------CALENDAR LISTS----------------*/
@@ -49,4 +70,53 @@ header .icons span {
     display: flex;
     list-style: none;
     flex-wrap: wrap;
+    text-align: center;
+}
+
+/* To have the days and weeks in rows */
+.calendar ul li {
+    position: relative;
+    width: calc(100%/7);
+}
+
+.calendar .days{
+    margin-bottom: 20px;
+}
+
+.calendar .weeks li {
+    font-weight: 500;
+}
+
+.calendar .days li {
+    z-index: 1;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.days li.inactive {
+    color: lightgray;
+}
+
+.days li.active {
+    color: white;
+}
+
+.calendar .days li::before{
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.days li:hover::before{
+    background: #be5858;
+}
+
+.days li.active::before {
+    background: #be5858c5;
 }
