@@ -54,9 +54,10 @@ header .icons span {
     /* border: 1px dotted yellow; */
 }
 
-.material-symbols-rounded {
+span.material-symbols-rounded{
     padding-bottom: 32px;
     color: lightgray;
+    border: 1px dotted blue;
 }
 
 header .icons span:hover{
