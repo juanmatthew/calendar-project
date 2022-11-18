@@ -38,7 +38,7 @@ header .icons {
     display: flex;
     align-items: center;
     justify-content:space-between;
-    border: 1px dotted blue;
+    /* border: 1px dotted blue; */
     padding: 0 20px;
 }
 
@@ -57,7 +57,7 @@ header .icons span {
 span.material-symbols-rounded{
     padding-bottom: 32px;
     color: lightgray;
-    border: 1px dotted blue;
+    /* border: 1px dotted blue; */
 }
 
 header .icons span:hover{
@@ -118,11 +118,13 @@ header .icons span:last-child{
     left: 50%;
     z-index: -1;
     border-radius: 50%;
+    /* to make sure the circle is in the middle of the number */
     transform: translate(-50%, -50%);
 }
 
 .days li:hover::before{
     background: #be5858;
+    transition: .4s;
 }
 
 .days li.active::before {
