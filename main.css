@@ -46,13 +46,17 @@ header .icons span {
     height: 28px;
     width: 28px;
     margin: 5px;
-    padding: 0;
     cursor: pointer;
     text-align: center;
     line-height: 38px;
     border-radius: 5px;
     background: #be585879;
     /* border: 1px dotted yellow; */
+}
+
+.material-symbols-rounded {
+    padding-bottom: 32px;
+    color: lightgray;
 }
 
 header .icons span:hover{
