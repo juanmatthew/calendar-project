@@ -34,16 +34,19 @@ header .current-date {
     font-weight: 500;
 }
 
-/* header .icons {
+header .icons {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
     border: 1px dotted blue;
     padding: 0 20px;
-} */
+}
 
 header .icons span {
     height: 28px;
     width: 28px;
-    margin: 0 1px;
-    padding: 3px;
+    margin: 5px;
+    padding: 0;
     cursor: pointer;
     text-align: center;
     line-height: 38px;
