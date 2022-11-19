@@ -15,7 +15,8 @@ const months = ["January", "February", "March", "April", "May", "June", "July", 
 //Building the Calendar days to appear without being in HTML
 const renderCalendar = () => {
     //getting the last date of the month
-    let lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate();
+    let firstDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(),
+    lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate();
     let liTag = "";
 
     for (let i = 1; i <= lastDateofMonth; i++) {
@@ -39,5 +40,8 @@ prevNextIcon.forEach(icon => {
 
         //if the prev icon is click then it minuses the month by 1, else it adds by 1
         currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
+
+        //calling the calendar
+        renderCalendar();
     });
 });
