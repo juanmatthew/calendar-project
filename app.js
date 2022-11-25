@@ -18,16 +18,21 @@ const renderCalendar = () => {
     let firstDateofMonth = new Date(currYear, currMonth, 1).getDay(), //to get the first day
     lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(),// to get the last day
     lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate();// to get last day of last month
+    firstDateofNextMonth = new Date(currYear, currMonth, lastDateofMonth).getDay();// to get first day of Next month
     let liTag = "";
 
-    for (let i = firstDateofMonth; i > 0; i--){
-        liTag += `<li>${lastDateofLastMonth - i + 1}</li>`;       
+    for (let i = firstDateofMonth; i > 0; i--){ //last days of the previous month
+        liTag += `<li class = "inactive">${lastDateofLastMonth - i + 1}</li>`;       
     }
 
-    for (let i = 1; i <= lastDateofMonth; i++) {
+    for (let i = 1; i <= lastDateofMonth; i++) { // all of the days in the current month
         // console.log(i);
         //so we don't need to add each individual li tag for days
         liTag += `<li>${i}</li>`;
+    }
+
+    for (let i = firstDateofNextMonth; i < 6; i++) { //first days of the next month
+        liTag += `<li class = "inactive">${i - firstDateofNextMonth + 1}</li>`; 
     }
 
     //title month and year
