@@ -15,9 +15,14 @@ const months = ["January", "February", "March", "April", "May", "June", "July", 
 //Building the Calendar days to appear without being in HTML
 const renderCalendar = () => {
     //getting the last date of the month
-    let firstDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(),
-    lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate();
+    let firstDateofMonth = new Date(currYear, currMonth, 1).getDay(), //to get the first day
+    lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(),// to get the last day
+    lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate();// to get last day of last month
     let liTag = "";
+
+    for (let i = firstDateofMonth; i > 0; i--){
+        liTag += `<li>${lastDateofLastMonth - i + 1}</li>`;       
+    }
 
     for (let i = 1; i <= lastDateofMonth; i++) {
         // console.log(i);
